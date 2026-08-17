@@ -1,4 +1,4 @@
-# alfred-claude-plugin — Claude rules
+# Contributing — change control for alfred-claude-plugin
 
 Public, Tier 2 (client configuration) repository under the Secure Development
 Policy. It contains no product code and no secrets: a Claude Code plugin
@@ -14,3 +14,4 @@ user's client connects. Treat it accordingly.
 4. `.mcp.json` must keep `type: http` and `url: https://get-alfred.ai/api/mcp`.
 5. Bump `version` in `.claude-plugin/plugin.json` on every user-visible change.
 6. No agent attribution in commits or PRs. No secrets, ever.
+7. Do not add a `CLAUDE.md` at the repo root: `claude plugin validate --strict` rejects it (plugin roots do not load it as context). Rules live here.
