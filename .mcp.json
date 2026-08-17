@@ -1,0 +1,6 @@
+{
+  "alfred": {
+    "type": "http",
+    "url": "https://get-alfred.ai/api/mcp"
+  }
+}

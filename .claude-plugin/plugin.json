@@ -1,0 +1,10 @@
+{
+  "name": "alfred",
+  "description": "Search your email, read a thread and see your calendar through alfred_. Read-only, as you, sign in once with OAuth.",
+  "version": "1.0.0",
+  "author": { "name": "alfred_", "url": "https://get-alfred.ai" },
+  "homepage": "https://get-alfred.ai/mcp/claude",
+  "repository": "https://github.com/scribehq/alfred-claude-plugin",
+  "license": "MIT",
+  "keywords": ["email", "calendar", "gmail", "outlook", "assistant", "mcp"]
+}
