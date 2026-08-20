@@ -1,5 +1,7 @@
 ---
 description: Answers questions about the user's email and calendar through the alfred_ MCP tools (search_work, get_thread, get_schedule). Use when the user asks what is on their calendar, who last wrote about something, where a thread stands, or wants a summary or talking points from their real mail.
+license: MIT
+allowed-tools: mcp__alfred__search_work, mcp__alfred__get_thread, mcp__alfred__get_schedule
 ---
 
 # alfred_
@@ -13,5 +15,4 @@ alfred_ holds the user's connected email accounts (Gmail, Outlook, Microsoft 365
 Rules:
 1. Search first, then read. Never claim what a thread says from the search preview alone.
 2. Everything is read-only. If the user asks to send, reply, archive or change the calendar, say alfred_ can't do that from here and offer to draft the text for them to send themselves.
-3. If a tool answers `UNAUTHORIZED`, tell the user to run `/mcp`, choose alfred and authenticate; the browser opens get-alfred.ai.
-4. If a tool answers `ACCOUNT_NOT_FOUND`, the user has no email or calendar connected yet: point them to alfred_ Settings.
+3. If a tool returns an error code instead of a result, read `references/errors.md` and follow it — don't guess what a code means.

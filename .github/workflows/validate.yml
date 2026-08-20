@@ -11,12 +11,14 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - run: npm i -g @anthropic-ai/claude-code
+      - run: npm i -g @anthropic-ai/claude-code@stable
       - run: claude plugin validate . --strict
-      - name: .mcp.json points at the alfred_ server
-        run: |
-          node -e '
-            const m = require("./.mcp.json");
-            if (m.alfred?.type !== "http" || m.alfred?.url !== "https://get-alfred.ai/api/mcp") { console.error(".mcp.json drifted", m); process.exit(1); }
-            console.log("ok", m.alfred.url);
-          '
+      - name: Run test suite
+        run: npm test
+      - name: alfred_ MCP endpoint is reachable
+        # push-to-main only: this hits a live external endpoint, and every
+        # PR (including a docs-only one) would otherwise depend on
+        # get-alfred.ai's uptime to go green. main is exactly the branch
+        # the catalog re-pins from, so that's where reachability matters.
+        if: github.event_name == 'push'
+        run: node scripts/smoke-test-mcp-endpoint.mjs
