@@ -11,7 +11,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - run: npm i -g @anthropic-ai/claude-code
+      - run: npm i -g @anthropic-ai/claude-code@stable
       - run: claude plugin validate . --strict
       - name: Run test suite
         run: npm test
