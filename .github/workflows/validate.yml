@@ -16,4 +16,9 @@ jobs:
       - name: Run test suite
         run: node --test
       - name: alfred_ MCP endpoint is reachable
+        # push-to-main only: this hits a live external endpoint, and every
+        # PR (including a docs-only one) would otherwise depend on
+        # get-alfred.ai's uptime to go green. main is exactly the branch
+        # the catalog re-pins from, so that's where reachability matters.
+        if: github.event_name == 'push'
         run: node scripts/smoke-test-mcp-endpoint.mjs
