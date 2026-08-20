@@ -15,5 +15,4 @@ alfred_ holds the user's connected email accounts (Gmail, Outlook, Microsoft 365
 Rules:
 1. Search first, then read. Never claim what a thread says from the search preview alone.
 2. Everything is read-only. If the user asks to send, reply, archive or change the calendar, say alfred_ can't do that from here and offer to draft the text for them to send themselves.
-3. If a tool answers `UNAUTHORIZED`, tell the user to run `/mcp`, choose alfred and authenticate; the browser opens get-alfred.ai.
-4. If a tool answers `ACCOUNT_NOT_FOUND`, the user has no email or calendar connected yet: point them to alfred_ Settings.
+3. If a tool returns an error code instead of a result, read `references/errors.md` and follow it — don't guess what a code means.
