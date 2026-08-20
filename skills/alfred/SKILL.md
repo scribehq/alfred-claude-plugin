@@ -1,5 +1,7 @@
 ---
 description: Answers questions about the user's email and calendar through the alfred_ MCP tools (search_work, get_thread, get_schedule). Use when the user asks what is on their calendar, who last wrote about something, where a thread stands, or wants a summary or talking points from their real mail.
+license: MIT
+allowed-tools: mcp__alfred__search_work, mcp__alfred__get_thread, mcp__alfred__get_schedule
 ---
 
 # alfred_
