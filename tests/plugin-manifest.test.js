@@ -1,5 +1,6 @@
 const { test } = require("node:test");
 const assert = require("node:assert/strict");
+const fs = require("node:fs");
 const path = require("node:path");
 
 const manifest = require(path.join("..", ".claude-plugin", "plugin.json"));
@@ -18,4 +19,6 @@ test("plugin.json keywords cover the connected providers", () => {
 
 test("plugin.json license matches the repo LICENSE (MIT)", () => {
   assert.equal(manifest.license, "MIT");
+  const licenseText = fs.readFileSync(path.join(__dirname, "..", "LICENSE"), "utf8");
+  assert.match(licenseText, /^MIT License/, "LICENSE file is not actually an MIT license");
 });

@@ -24,4 +24,5 @@ test("references/errors.md documents both known error codes with a recovery step
     assert.match(errors, new RegExp("`" + code + "`"), `errors.md missing ${code}`);
   }
   assert.match(errors, /\/mcp/, "errors.md should still tell the model how to recover from UNAUTHORIZED");
+  assert.match(errors, /Settings/, "errors.md should still tell the model how to recover from ACCOUNT_NOT_FOUND");
 });

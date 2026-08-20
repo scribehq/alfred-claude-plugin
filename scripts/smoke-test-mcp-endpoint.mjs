@@ -24,8 +24,6 @@ if (!url) {
 }
 
 const TIMEOUT_MS = 10_000;
-const controller = new AbortController();
-const timer = setTimeout(() => controller.abort(), TIMEOUT_MS);
 
 try {
   const res = await fetch(url, {
@@ -44,7 +42,7 @@ try {
         clientInfo: { name: "alfred-claude-plugin-smoke-test", version: "0" },
       },
     }),
-    signal: controller.signal,
+    signal: AbortSignal.timeout(TIMEOUT_MS),
   });
 
   if (res.status >= 500) {
@@ -56,6 +54,4 @@ try {
 } catch (err) {
   console.error(`smoke test: could not reach ${url} — ${err.message}`);
   process.exit(1);
-} finally {
-  clearTimeout(timer);
 }

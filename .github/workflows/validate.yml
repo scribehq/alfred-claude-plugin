@@ -14,7 +14,7 @@ jobs:
       - run: npm i -g @anthropic-ai/claude-code
       - run: claude plugin validate . --strict
       - name: Run test suite
-        run: node --test
+        run: npm test
       - name: alfred_ MCP endpoint is reachable
         # push-to-main only: this hits a live external endpoint, and every
         # PR (including a docs-only one) would otherwise depend on
