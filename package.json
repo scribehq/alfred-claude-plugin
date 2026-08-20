@@ -1,0 +1,9 @@
+{
+  "name": "alfred-claude-plugin",
+  "private": true,
+  "description": "Tests and CI scripts for the alfred_ Claude Code plugin manifest. No runtime dependencies — the plugin itself ships no code.",
+  "scripts": {
+    "test": "node --test",
+    "smoke": "node scripts/smoke-test-mcp-endpoint.mjs"
+  }
+}
