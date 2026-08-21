@@ -1,11 +1,11 @@
 {
   "name": "alfred",
   "displayName": "alfred_",
-  "description": "Search your email, read a thread and see your calendar through alfred_. Read-only, as you, sign in once with OAuth.",
-  "version": "1.1.0",
+  "description": "Your email, calendar and to-dos in Claude, through alfred_. Search and read across Gmail/Outlook/M365, draft replies, organize your inbox, and manage your schedule. Acts as you; every send or high-impact change is previewed and needs your confirmation.",
+  "version": "1.2.0",
   "author": { "name": "alfred_", "url": "https://get-alfred.ai" },
   "homepage": "https://get-alfred.ai/mcp/claude",
   "repository": "https://github.com/scribehq/alfred-claude-plugin",
   "license": "MIT",
-  "keywords": ["email", "calendar", "gmail", "outlook", "microsoft-365", "read-only", "assistant", "mcp"]
+  "keywords": ["email", "calendar", "tasks", "gmail", "outlook", "microsoft-365", "inbox", "assistant", "mcp"]
 }
