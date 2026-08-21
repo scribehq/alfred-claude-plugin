@@ -51,7 +51,14 @@ test("SKILL.md does not restrict the tool surface it can reach", () => {
 });
 
 test("README documents both the read AND the write surface", () => {
-  for (const tool of ["search_work", "get_thread", "get_schedule", "read_attachment", "list_inbox"]) {
+  // The five reads added 2026-08-20 are included deliberately: this repo's
+  // whole failure mode is documenting LESS than the server exposes, so a new
+  // tool shipping without a README row is the same defect as the original
+  // read-only claim, just smaller.
+  for (const tool of [
+    "search_work", "get_thread", "get_schedule", "read_attachment", "list_inbox",
+    "get_email_body", "list_folders", "search_events", "search_todos", "list_contacts",
+  ]) {
     assert.match(README, new RegExp("`" + tool + "`"), `README missing read tool ${tool}`);
   }
   for (const tool of ["create_draft", "send_email", "create_event", "organize_email", "create_todo"]) {

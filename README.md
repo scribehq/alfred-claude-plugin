@@ -94,13 +94,16 @@ claude mcp add --transport http alfred https://get-alfred.ai/api/mcp
 | `search_work` | Finds threads across every connected account in one query |
 | `list_inbox` | Lists a folder — filter by sender, date, unread, attachments |
 | `get_thread` | Opens one thread in full, with participants and attachments |
+| `get_email_body` | Opens one message, without pulling the whole thread |
 | `read_attachment` | Reads an attachment's contents — text, PDF, images, xlsx, docx |
+| `list_folders` | Your folders and labels, so a move names a real target |
 | `get_schedule` | Reads your calendar for a day or a range |
+| `search_events` | Finds an event by title, attendee, or location |
 | `list_calendars` | Every calendar across every connected account |
 | `find_free_time` | Finds open slots of a given length |
 | `check_free` | Checks whether one specific window is free |
-| `list_todos` | Your tasks and reminders |
-| `lookup_contact` | Someone you correspond with |
+| `list_todos` · `search_todos` | Your tasks and reminders, listed or searched |
+| `lookup_contact` · `list_contacts` | Someone you correspond with, or all of them |
 | `list_email_rules` | Your automation rules |
 | `list_pending_drafts` · `get_pending_draft` | Drafts alfred\_ prepared for you |
 
