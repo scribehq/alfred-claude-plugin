@@ -76,9 +76,9 @@ claude mcp add --transport http alfred https://get-alfred.ai/api/mcp
 
 > [!IMPORTANT]
 > **Connect a mailbox first.** Signing in creates your alfred\_ account — it
-> does not connect your email. If tools report that no account was found, open
-> [alfred\_ Settings](https://get-alfred.ai) and connect Gmail or Outlook, then
-> come back and ask again.
+> does not connect your email. Until you do, tools return a short message
+> saying so, with a one-tap link to fix it — Claude will hand you the link.
+> Open it, connect Gmail or Outlook, then ask again.
 
 ---
 
@@ -106,6 +106,9 @@ claude mcp add --transport http alfred https://get-alfred.ai/api/mcp
 | `lookup_contact` · `list_contacts` | Someone you correspond with, or all of them |
 | `list_email_rules` | Your automation rules |
 | `list_pending_drafts` · `get_pending_draft` | Drafts alfred\_ prepared for you |
+| `search_facts` | What you have told alfred\_ to remember |
+| `cloud_files` | Searches, browses and reads your connected cloud storage |
+| `list_accounts` | Which mailboxes and calendars are connected, and their health |
 
 </details>
 
@@ -123,6 +126,8 @@ claude mcp add --transport http alfred https://get-alfred.ai/api/mcp
 | `organize_email` · `bulk_organize_emails` | Archive, move, label, mark read/unread, star |
 | `create_email_rule` · `update_email_rule` | Automation rules |
 | `dismiss_pending_draft` | Dismisses a draft alfred\_ suggested |
+| `remember_fact` · `update_fact` | Remembers something you tell it, for later |
+| `get_account_setup_link` | Mints a one-tap link to connect, reconnect or widen access |
 
 </details>
 
@@ -145,11 +150,17 @@ claude mcp add --transport http alfred https://get-alfred.ai/api/mcp
 At sign-in you approve a set of scopes.
 
 **Reads** — `work:read`, `email:read`, `calendar:read`, `tasks:read`,
-`contacts:read`. Find and read your mail, calendar and tasks.
+`contacts:read`, `memory:read`, `files:read`. Find and read your mail,
+calendar, tasks, saved notes and cloud files.
 
 **Writes** — `email:draft`, `email:organize`, `calendar:write`, `tasks:write`,
-`rules:write`, `email:send`. Draft, tidy, schedule, and — with your explicit
-confirmation — send.
+`rules:write`, `memory:write`, `email:send`. Draft, tidy, schedule, remember,
+and — with your explicit confirmation — send.
+
+You approve these together at sign-in. A connection granted fewer of them can
+still see the tools it cannot use — asking for one returns a short message
+naming the missing permission, with a link to widen it. Nothing runs without
+the scope.
 
 Full detail: [Security](https://get-alfred.ai/security) ·
 [Privacy](https://get-alfred.ai/privacy)
